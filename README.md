@@ -1,0 +1,4 @@
+DjangoRh
+========
+
+Django with admin
