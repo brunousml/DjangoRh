@@ -14,7 +14,7 @@ def send(request):
     #get Post from view
     mails_list = request.POST.getlist('employees')
 
-    #mount mail
+    #create mail
     if request.POST['subject']:
         subject = request.POST['subject']
     else:
@@ -35,7 +35,7 @@ def send(request):
             msg.send()
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return HttpResponseRedirect('/employees/')
+        return HttpResponseRedirect('/sendmail/')
     else:
         # In reality we'd use a form class
         # to get proper validation errors.

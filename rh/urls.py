@@ -14,6 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^employees/$', 'employees.views.sendmail'),
-    url(r'^employees/send/$', 'employees.views.send'),
+    url(r'^sendmail/$', 'employees.views.sendmail'),
+    url(r'^sendmail/send/$', 'employees.views.send'),
 )
