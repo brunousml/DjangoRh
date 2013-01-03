@@ -1,0 +1,39 @@
+<h1>Enviar Email</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/employees/send/" method="post">
+	{% csrf_token %}
+
+	<p>Selecione para quem será enviado:</p>
+
+	{% if latest_employees_list %}
+	    <ul style='list-style:none;'>
+	    {% for emp in latest_employees_list %}
+	    	<li><input type="checkbox" name="employees" value="{{ emp.email }}" />
+	    	<label>{{ emp.name }}</label><br /></li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>Nenhum empregado disponível.</p>
+	{% endif %}
+
+	<br/><br/>
+
+	<fieldset  style="padding:20px; ">
+		<legend>Digite seu email aqui:</legend>
+		<p></p>
+		<p>
+			<label>Título</label><br/>
+			<input type="text" name="subject" />
+		</p>
+
+	    <p>
+	    	<label>Mensagem</label><br/>
+	    	<textarea name="body" style='width:500px;height:200px;' ></textarea>
+	    </p>
+
+		<p><input type="submit" value="Enviar" /></p>
+	</fieldset>
+</form>
+

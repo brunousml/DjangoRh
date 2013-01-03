@@ -28,7 +28,7 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'pt-us'
+LANGUAGE_CODE = 'pt-br'
 
 SITE_ID = 1
 
@@ -106,6 +106,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/home/bruno/rh/templates/'
 )
 
 INSTALLED_APPS = (
@@ -150,3 +151,9 @@ LOGGING = {
         },
     }
 }
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'brunousml@gmail.com'
+EMAIL_HOST_PASSWORD = 'hcskkzydyfwaruzt'
+EMAIL_PORT = 587

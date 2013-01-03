@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Employees(models.Model):
     name = models.CharField(max_length=200)
-    pic = models.ImageField(upload_to='uploads/%Y/%m/%d/')
+    pic = models.ImageField(upload_to='uploads/')
     email = models.EmailField()
     status = models.BooleanField()
     phone = models.CharField(max_length=200)
@@ -13,7 +13,7 @@ class Employees(models.Model):
     user = models.ForeignKey(User)
 
     def __unicode__(self):
-        return "%s" % (self.name)
+        return "%s" % (self.email)
 
 class Department(models.Model):
     employees = models.ManyToManyField(Employees)
